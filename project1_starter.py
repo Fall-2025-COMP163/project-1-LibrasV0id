@@ -47,7 +47,7 @@ def calculate_stats(character_class, level):
         health = 100 + (level * 11)
         
     return (strength, magic, health)
-    pass
+      
 
 def create_character(name, character_class):
     """
@@ -73,7 +73,7 @@ def create_character(name, character_class):
     }
     
     return character
-    pass
+      
 
 def save_character(character, filename):
     """
@@ -101,7 +101,7 @@ def save_character(character, filename):
         file.write(f"Health: {character['health']}\n")
         file.write(f"Gold: {character['gold']}\n")
         return True
-    pass
+      
 
 def load_character(filename):
     """
@@ -132,7 +132,7 @@ def load_character(filename):
             elif key == "Gold":
                 character["gold"] = int(value)
         return character
-    pass
+      
 
 def display_character(character):
     """
@@ -160,7 +160,7 @@ def display_character(character):
         print(f"Magic: {character['magic']}")
         print(f"Health: {character['health']}")
         print(f"Gold: {character['gold']}")
-    pass
+      
 
 def level_up(character):
     """
@@ -178,7 +178,7 @@ def level_up(character):
     character["strength"] = strength   
     character["magic"] = magic
     character["health"] = health
-    pass
+      
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
