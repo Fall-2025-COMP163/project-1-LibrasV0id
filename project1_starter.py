@@ -7,7 +7,7 @@ Example: AI helped with file I/O error handling logic in save_character function
 """
 level = 1
 #  user = input("What is your name and class(Warrior, Mage, Rogue, or Cleric)? separate with a comma: ")
-user = "Khal, Mage"
+user = "Khal_TestHero, Mage"
 characterInfo = user.split(",")
 name = characterInfo[0].strip()
 character_class = characterInfo[1].strip()
@@ -34,6 +34,7 @@ def calculate_stats(character_class, level):
         health = 100 + (level * 11)
     else:
         print("Invalid character class")
+    return strength, magic, health
 
 def create_character(name, character_class):
     stats = calculate_stats(character_class, level)
@@ -57,7 +58,7 @@ def save_character(character, filename):
         file.write(f"Magic: {character['magic']}\n")
         file.write(f"Health: {character['health']}\n")
         file.write(f"Gold: {character['gold']}\n")
-    return True
+        return True
 
 def load_character(filename):
     with open(filename, 'r') as file:
@@ -79,7 +80,7 @@ def load_character(filename):
                 character["health"] = int(value)
             elif key == "Gold":
                 character["gold"] = int(value)
-    return character
+        return character
 
 def display_character(character):
     with open(filename, 'r') as file:
