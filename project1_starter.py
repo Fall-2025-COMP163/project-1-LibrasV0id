@@ -33,6 +33,12 @@ def calculate_stats(character_class, level):
         strength = 2 + (level * 2)
         magic = 20 + (level * 8)
         health = 100 + (level * 11) 
+        
+    elif  character_class not in ["Warrior", "Mage", "Rogue", "Cleric"]:
+        print("Error: Invalid character class. Stats not calculated.")
+        strength = 0
+        magic = 0
+        health = 0
     
     return strength, magic, health
 
