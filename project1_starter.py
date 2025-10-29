@@ -37,19 +37,18 @@ def calculate_stats(character_class, level):
     return strength, magic, health
 
 def create_character(name, character_class):
-    strength, magic, health = calculate_stats(character_class, level)
     if character_class not in ["Warrior", "Mage", "Rogue", "Cleric"]:
         print("Error: Invalid character class. Character not created.")
-        return None
-    else:
-        character = {
-            "name": name,
-            "class": character_class,
-            "level": level,
-            "strength": strength,
-            "magic": magic,
-            "health": health,
-            "gold": 150
+
+    strength, magic, health = calculate_stats(character_class, level)
+    character = {
+        "name": name,
+        "class": character_class,
+        "level": level,
+        "strength": strength,
+        "magic": magic,
+        "health": health,
+        "gold": 150
         }
     return character
 
