@@ -32,19 +32,19 @@ def calculate_stats(character_class, level):
     elif character_class == "Cleric":
         strength = 2 + (level * 2)
         magic = 20 + (level * 8)
-        health = 100 + (level * 11)
-    else:
-        print("Invalid character class")
-        return None  
+        health = 100 + (level * 11) 
     
     return strength, magic, health
 
 def create_character(name, character_class):
     strength, magic, health = calculate_stats(character_class, level)
+    if character_class not in ["Warrior", "Mage", "Rogue", "Cleric"]:
+        print("Error: Invalid character class. Character not created.")
+        return None
     character = {
         "name": name,
         "class": character_class,
-        "level": 1,
+        "level": level,
         "strength": strength,
         "magic": magic,
         "health": health,
@@ -68,6 +68,7 @@ def load_character(filename):
         lines = file.readlines()
         character = {}
         for line in lines:
+            stripped_line = line.strip()
             key, value = line.strip().split(": ")
             if key == "Character Name":
                 character["name"] = value
@@ -83,7 +84,7 @@ def load_character(filename):
                 character["health"] = int(value)
             elif key == "Gold":
                 character["gold"] = int(value)
-        return character
+    return character
 
 def display_character(character):
         print("=== CHARACTER SHEET ===")
@@ -103,6 +104,7 @@ def level_up(character):
     character["strength"] = strength   
     character["magic"] = magic
     character["health"] = health
+    level = character["level"]
     return character
 
 # Main program area (optional - for testing your functions)
