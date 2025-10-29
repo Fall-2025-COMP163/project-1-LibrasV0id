@@ -13,10 +13,7 @@ name = characterInfo[0].strip()
 character_class = characterInfo[1].strip()
 
 def calculate_stats(character_class, level):
-    # TODO: Implement this function
-    # Return a tuple: (strength, magic, health)
-
-    if character_class == "Warrior":
+        if character_class == "Warrior":
         strength = 20 + (level * 5)
         magic = 5 + (level * 1)
         health = 120 + (level * 10)
@@ -35,9 +32,7 @@ def calculate_stats(character_class, level):
         strength = 2 + (level * 2)
         magic = 20 + (level * 8)
         health = 100 + (level * 11)
-        
-    return (strength, magic, health)
-    pass
+
 
 def create_character(name, character_class):
     # TODO: Implement this function
@@ -55,7 +50,7 @@ def create_character(name, character_class):
     }
     
     return character
-    pass
+     
 
 def save_character(character, filename):
     # TODO: Implement this function
@@ -70,7 +65,7 @@ def save_character(character, filename):
         file.write(f"Health: {character['health']}\n")
         file.write(f"Gold: {character['gold']}\n")
         return True
-    pass
+     
 
 def load_character(filename):
     # TODO: Implement this function
@@ -97,7 +92,7 @@ def load_character(filename):
             elif key == "Gold":
                 character["gold"] = int(value)
         return character
-    pass
+     
 
 def display_character(character):
     # TODO: Implement this function
@@ -111,7 +106,7 @@ def display_character(character):
         print(f"Magic: {character['magic']}")
         print(f"Health: {character['health']}")
         print(f"Gold: {character['gold']}")
-    pass
+     
 
 def level_up(character):
     # TODO: Implement this function
@@ -124,7 +119,7 @@ def level_up(character):
     character["strength"] = strength   
     character["magic"] = magic
     character["health"] = health
-    pass
+     
 
 # Main program area (optional - for testing your functions)
 if __name__ == "__main__":
