@@ -12,6 +12,7 @@ characterInfo = user.split(",")
 name = characterInfo[0].strip()
 character_class = characterInfo[1].strip()
 
+#calculate char stats
 def calculate_stats(character_class, level):
     if character_class == "Warrior":
         strength = 20 + (level * 5)
