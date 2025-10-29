@@ -6,7 +6,8 @@ AI Usage: [Document any AI assistance used]
 Example: AI helped with file I/O error handling logic in save_character function
 """
 level = 1
-user = input("What is your name and class(Warrior, Mage, Rogue, or Cleric)? separate with a comma: ")
+#  user = input("What is your name and class(Warrior, Mage, Rogue, or Cleric)? separate with a comma: ")
+user = "Khal, Mage"
 characterInfo = user.split(",")
 name = characterInfo[0].strip()
 character_class = characterInfo[1].strip()
