@@ -41,14 +41,15 @@ def create_character(name, character_class):
     if character_class not in ["Warrior", "Mage", "Rogue", "Cleric"]:
         print("Error: Invalid character class. Character not created.")
         return None
-    character = {
-        "name": name,
-        "class": character_class,
-        "level": level,
-        "strength": strength,
-        "magic": magic,
-        "health": health,
-        "gold": 150
+    else:
+        character = {
+            "name": name,
+            "class": character_class,
+            "level": level,
+            "strength": strength,
+            "magic": magic,
+            "health": health,
+            "gold": 150
         }
     return character
 
