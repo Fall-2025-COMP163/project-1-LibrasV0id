@@ -80,22 +80,22 @@ def load_character(filename):
         lines = file.readlines()
         character = {}
         for line in lines:
-            stripped_line = line.strip()
-            key, value = line.strip().split(": ")
-            if key == "Character Name":
-                character["name"] = value
-            elif key == "Class":
-                character["class"] = value
-            elif key == "Level":
-                character["level"] = int(value)
-            elif key == "Strength":
-                character["strength"] = int(value)
-            elif key == "Magic":
-                character["magic"] = int(value)
-            elif key == "Health":
-                character["health"] = int(value)
-            elif key == "Gold":
-                character["gold"] = int(value)
+            if ": " in line:
+                key, value = line.strip().split(": ")
+                if key == "Character Name":
+                    character["name"] = value
+                elif key == "Class":
+                    character["class"] = value
+                elif key == "Level":
+                    character["level"] = int(value)
+                elif key == "Strength":
+                    character["strength"] = int(value)
+                elif key == "Magic":
+                    character["magic"] = int(value)
+                elif key == "Health":
+                    character["health"] = int(value)
+                elif key == "Gold":
+                    character["gold"] = int(value)
     return character
 
 def display_character(character):
