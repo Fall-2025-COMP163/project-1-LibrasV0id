@@ -61,6 +61,12 @@ def create_character(name, character_class):
     return character
 
 def save_character(character, filename):
+    directory = os.path.dirname(filename)
+    
+    if directory and not os.path.exists(directory):
+        print(f"Error: Directory '{directory}' does not exist.")
+        return False
+        
     with open(filename, 'w') as file:
         file.write(f"Character Name: {character['name']}\n")
         file.write(f"Class: {character['class']}\n")
