@@ -1,3 +1,5 @@
+import os
+
 """
 COMP 163 - Project 1: Character Creator & Saving/Loading
 Name: Khal Dogan
@@ -70,6 +72,10 @@ def save_character(character, filename):
         return True
 
 def load_character(filename):
+    if not os.path.exists(filename):
+        print(f"Error: File '{filename}' not found.")
+        return None 
+    
     with open(filename, 'r') as file:
         lines = file.readlines()
         character = {}
