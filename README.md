@@ -97,3 +97,15 @@ Modifying protected files will result in automatic academic integrity violation
 Implementation (70%): Function correctness, file operations, error handling
 
 Interview (30%): Code explanation and live coding challenge
+
+
+# Game Concept: The basics of RMG character selections
+
+#	Design Choices: I chose my stats based on what was the easiest to understand and the best way to calculate them.
+
+#	Bonus Creative Features: None
+
+#	AI Usage: to figure out, I needed to import 
+
+#	How to Run: Press play
+
